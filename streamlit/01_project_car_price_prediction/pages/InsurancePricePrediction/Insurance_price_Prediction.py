@@ -1,17 +1,17 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+import os
 # -------- CACHE FUNCTIONS --------
 @st.cache_resource
 def load_model():
-    return joblib.load(
-        "./pages/InsurancePricePrediction/xgboost_model_for_InsurancePrice_prediction.pkl"
-    )
+    model_path = os.path.join(os.path.dirname(__file__), "xgboost_model_for_InsurancePrice_prediction.pkl")
+    return joblib.load(model_path)
 
 @st.cache_data
-def load_data(path):
-    return pd.read_csv(path)
+def load_data():
+    csv_path = os.path.join(os.path.dirname(__file__), "insurance.csv")
+    return pd.read_csv(csv_path)
 
 # -------- MAIN APP --------
 def main():
@@ -19,7 +19,7 @@ def main():
     file = "./pages/InsurancePricePrediction/insurance.csv"
 
     model = load_model()
-    df = load_data(file)
+    df = load_data()
 
     # -------- TAB 1: PREDICTION --------
     with tab1:
