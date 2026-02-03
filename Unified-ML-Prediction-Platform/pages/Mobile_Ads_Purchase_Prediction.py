@@ -5,13 +5,13 @@ import os
 # ---------- CACHE FUNCTIONS ----------
 @st.cache_resource
 def load_model():
-    model_path = os.path.join(os.path.dirname(__file__), "xgboost_model.pkl")
-    return joblib.load(model_path)
+    path = os.path.join(os.path.dirname(__file__), "Mobile_Ads_Purchase_Prediction", "xgboost_model.pkl")
+    return joblib.load(path)
 
 @st.cache_data
 def load_data():
-    csv_path = os.path.join(os.path.dirname(__file__), "cleaned_mobile_dataset.csv")
-    return pd.read_csv(csv_path)
+    path = os.path.join(os.path.dirname(__file__), "Mobile_Ads_Purchase_Prediction", "cleaned_mobile_dataset.csv")
+    return pd.read_csv(path)
 
 # ---------- MAIN APP ----------
 def main():

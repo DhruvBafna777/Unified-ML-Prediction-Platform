@@ -2,16 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib
 import os
+
 # -------- CACHE FUNCTIONS --------
 @st.cache_resource
 def load_model():
-    model_path = os.path.join(os.path.dirname(__file__), "xgboost_model_for_InsurancePrice_prediction.pkl")
-    return joblib.load(model_path)
+    # Folder name screenshot ke hisaab se (InsurancePricePrediction)
+    path = os.path.join(os.path.dirname(__file__), "InsurancePricePrediction", "xgboost_model_for_InsurancePrice_prediction.pkl")
+    return joblib.load(path)
 
 @st.cache_data
 def load_data():
-    csv_path = os.path.join(os.path.dirname(__file__), "insurance.csv")
-    return pd.read_csv(csv_path)
+    path = os.path.join(os.path.dirname(__file__), "InsurancePricePrediction", "insurance.csv")
+    return pd.read_csv(path)
 
 # -------- MAIN APP --------
 def main():

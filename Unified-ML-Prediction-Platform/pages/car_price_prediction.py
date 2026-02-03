@@ -5,13 +5,14 @@ import os
 # -------- CACHE FUNCTIONS --------
 @st.cache_resource
 def load_model():
-    model_path = os.path.join(os.path.dirname(__file__), "final_random_forest_model.pkl")
-    return joblib.load(model_path)
+    # Folder ka naam beech mein add kiya hai
+    path = os.path.join(os.path.dirname(__file__), "Car_Price_Prediction", "final_random_forest_model.pkl")
+    return joblib.load(path)
 
 @st.cache_data
 def load_data():
-    csv_path = os.path.join(os.path.dirname(__file__), "car_price_cleaned_data.csv")
-    return pd.read_csv(csv_path)
+    path = os.path.join(os.path.dirname(__file__), "Car_Price_Prediction", "car_price_cleaned_data.csv")
+    return pd.read_csv(path)
 
 # -------- MAIN APP --------
 def main():
