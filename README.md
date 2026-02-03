@@ -1,5 +1,9 @@
 # Unified ML Prediction Platform 🤖
 
+### 🚀 **Live Demo**
+👉 **[Demo LINK](https://unified-ml-prediction-platform-111.streamlit.app/)**
+
+
 ## 📌 Project Overview
 This project is a centralized Machine Learning platform developed to perform predictive analysis across multiple domains. It integrates various supervised learning models into a single user-friendly web interface powered by **Streamlit**.
 
