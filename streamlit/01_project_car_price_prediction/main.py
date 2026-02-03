@@ -42,7 +42,7 @@ with col1:
         st.write("Estimate the market value of used cars based on specifications like mileage, year, and brand.")
         st.markdown("###") # Spacer
         if st.button("Launch Tool ➜", key="car_btn", use_container_width=True):
-            st.switch_page("pages/car_price_prediction.py")
+            st.switch_page("pages/Car_Price_Prediction/car_price_prediction.py")
 
 # Card 2: Mobile Ads
 with col2:
@@ -52,7 +52,7 @@ with col2:
         st.write("Analyze user behavior to predict if a user will purchase a product after clicking an ad.")
         st.markdown("###") # Spacer
         if st.button("Launch Tool ➜", key="mobile_btn", use_container_width=True):
-            st.switch_page("pages/Mobile_Ads_Purchase_Prediction.py")
+            st.switch_page("pages/Mobile_Ads_Purchase_Prediction/Mobile_Ads_Purchase_Prediction.py")
 
 # Card 3: House Price
 with col3:
@@ -62,7 +62,7 @@ with col3:
         st.write("Predict insurance costs based on personal and demographic information.")
         st.markdown("###") # Spacer
         if st.button("Launch Tool ➜", key="insurance_btn", use_container_width=True):
-            st.switch_page("pages/Insurance_price_Prediction.py")
+            st.switch_page("pages/InsurancePricePrediction/Insurance_price_Prediction.py")
             
 with col4:
     with st.container(border=True):
@@ -71,7 +71,7 @@ with col4:
         st.write("Estimate the price of diamonds based on their characteristics like carat, cut, color, and clarity.")
         st.markdown("###") # Spacer
         if st.button("Launch Tool ➜", key="diamonds_btn", use_container_width=True):
-            st.switch_page("pages/Diamonds_price_prediction.py")
+            st.switch_page("pages/Diamonds_price_prediction/Diamonds_price_prediction.py")
 
 # Footer area
 st.markdown("---")
