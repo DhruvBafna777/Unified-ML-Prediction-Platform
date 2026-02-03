@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 import seaborn as sns 
+import os
 
 @st.cache_resource
 def load_model():
-    return joblib.load(
-        "./pages/Diamonds_price_prediction/final_xgboost_model_for_diamonds.pkl"
-    )
+    model_path = os.path.join(os.path.dirname(__file__), "final_xgboost_model_for_diamonds.pkl")
+    return joblib.load(model_path)
     
 @st.cache_data
 def load_data():
