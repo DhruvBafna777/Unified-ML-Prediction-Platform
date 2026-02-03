@@ -1,24 +1,24 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+import os
 # ---------- CACHE FUNCTIONS ----------
 @st.cache_resource
 def load_model():
-    return joblib.load("./pages/Mobile_Ads_Purchase_Prediction/xgboost_model.pkl")
+    model_path = os.path.join(os.path.dirname(__file__), "xgboost_model.pkl")
+    return joblib.load(model_path)
 
 @st.cache_data
-def load_data(path):
-    return pd.read_csv(path)
+def load_data():
+    csv_path = os.path.join(os.path.dirname(__file__), "cleaned_mobile_dataset.csv")
+    return pd.read_csv(csv_path)
 
 # ---------- MAIN APP ----------
 def main():
     tab1, tab2 = st.tabs(["🔮 Predict Price", "📊 Data Analysis (EDA)"])
-    file = "./pages/Mobile_Ads_Purchase_Prediction/cleaned_mobile_dataset.csv"
-
     # Load once
     model = load_model()
-    df = load_data(file)
+    df = load_data()
 
     # ---------- TAB 1 ----------
     with tab1:
